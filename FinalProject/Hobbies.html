@@ -1,0 +1,133 @@
+<!doctype html>
+<html lang="en">
+
+	<!--
+		I360 Web Design
+		Basic HTML/CSS template
+	-->
+
+	<head>
+		<meta charset="utf-8">
+		<title>Hobbies</title>
+		<meta http-equiv="x-ua-compatible" content="ie=edge">
+		<meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+
+		<!-- Stylesheets -->
+		<link rel="stylesheet" href="css/normalize.css">
+		<link rel="stylesheet" href="css/styles.css">
+
+		<!-- Google Fonts-->
+		<link href="https://fonts.googleapis.com/css?family=Sunshiney&display=swap" rel="stylesheet">
+		<link href="https://fonts.googleapis.com/css?family=Acme&display=swap" rel="stylesheet">
+
+		<!-- Font Awesome -->
+		<script src="https://kit.fontawesome.com/3680edfbdb.js" crossorigin="anonymous"></script>
+
+		<!-- Map -->
+		<link rel="stylesheet" href="https://unpkg.com/leaflet@1.6.0/dist/leaflet.css"
+		integrity="sha512-xwE/Az9zrjBIphAcBb3F6JVqxf46+CDLwfLMHloNu6KEQCAWi6HcDUbeOfBIptF7tcCzusKFjFw2yuvEpDL9wQ=="
+		crossorigin=""/>
+ 
+		  <!-- Make sure you put this AFTER Leaflet's CSS -->
+		 <script src="https://unpkg.com/leaflet@1.6.0/dist/leaflet.js"
+			 integrity="sha512-gZwIG9x3wUXg2hdXF6+rVkLF/0Vi9U8D2Ntg4Ga5I5BZpVkVxlJWbSQtXPSiUTtC0TjtGOmxa1AJPuV0CPthew=="
+			 crossorigin="">
+		 </script>
+
+		<!--[if lte IE 9]>
+			<p class="browserupgrade">You are using an <strong>outdated</strong> browser. Please <a href="https://browsehappy.com/">upgrade your browser</a> to improve your experience and security.</p>
+		<![endif]-->
+	</head>
+
+	<body>
+		<!-- Navigation -->
+		<nav id="mySidenav" class="sidenav">
+			<a class="closebtn">&times;</a>
+			<a href="http://cgi.sice.indiana.edu/~tianhuan/FinalProject/Portfolio.html">Main Page</a>
+			<a href="http://cgi.sice.indiana.edu/~tianhuan/FinalProject/Photography.html">Photography</a>
+			<a href="http://cgi.sice.indiana.edu/~tianhuan/FinalProject/Biography.html">Biography</a>
+			<a href="http://cgi.sice.indiana.edu/~tianhuan/FinalProject/Hobbies.html">Hobbies</a>
+			<a href="http://cgi.sice.indiana.edu/~tianhuan/FinalProject/Projects.html">Projects</a>
+			<a href="http://cgi.sice.indiana.edu/~tianhuan/FinalProject/Arts.html">Arts</a>
+			<a href="http://cgi.sice.indiana.edu/~tianhuan/FinalProject/Music.html">Music Recommend</a>
+		</nav>
+
+			<div class="openbtn">
+				<i class="fas fa-bars fa-2x"></i>
+				<span class="menu-text">menu</span>
+			</div>
+		
+		<!-- Header-->
+		<header>
+			<div class="container">
+				<img src="images/Logo.jpg" alt="Logo">
+				<h1>Hobbies</h1>
+			</div>
+        </header>
+
+		<!-- Content -->
+		<article class="hobby">
+			<div class="container">
+				<h1>My Hobbies</h1>
+				<div class="hobbies">
+					<p>Me and my friends always have an actor dream, so we produced a video called PowerChord.</p>
+					<h2>Power Chord</h2>
+					<iframe width="400" height="315" 
+					src="https://www.youtube.com/embed/M6aEvfqdM3I" allowfullscreen>
+					</iframe>
+				</div>
+				<div class="hobbies2">
+					<h2>Travel</h2>
+					<p>I love travelling, I had been to many places, and I will update the map from today. It is year 2019 now, and I put some of my favorite places in the map that I had been to. Scroll the map to see those places!</p>
+					<p>I had a lot of fun in those places. The most unforgettable place is Chongqing and Changchun since one of them is my girlfriend's hometown and the other one is mine.</p>
+					<div id="mapid"></div>
+				</div>
+			</div>
+		</article>
+
+        <!-- Footer-->
+		<footer id="contact">
+			<div class="container">
+				<section>
+					<h2 class="sr-only">Contact Information</h2>
+					<h2>Say hi to me by these contacts!</h2>
+					<address>
+						<strong>1150 South Clarizz Blvd #352A</strong><br>
+						<strong>Bloomington, Indiana 47401</strong>
+					</address>
+					<p>(+1) 812-558-8271</p>
+					<p><a href="https://www.linkedin.com/in/tianze-huang-9582aa12b">
+						<span style="color:darkgoldenrod">My Linkedin</span>
+					</a></p>
+				</section>
+				<section>
+					<h2 class="sr-only">Social Media</h2>
+					<a href="#"><i class="fab fa-facebook fa-2x"></i></a>
+					<a href="#"><i class="fab fa-twitter fa-2x"></i></a>
+					<a href="#"><i class="fab fa-instagram fa-2x"></i></a>
+				</section>
+			</div>
+		</footer>
+
+		<!-- Javascript-->
+		<script src="js/nav.js"></script>
+		<script src="js/slideshow.js"></script>
+
+		<script>	
+			var mymap = L.map('mapid').setView([58.263287, -272.8125], 2);
+			L.tileLayer('https://api.mapbox.com/styles/v1/{id}/tiles/{z}/{x}/{y}?access_token={accessToken}', {
+    			attribution: 'Map data &copy; <a href="https://www.openstreetmap.org/">OpenStreetMap</a> contributors, <a href="https://creativecommons.org/licenses/by-sa/2.0/">CC-BY-SA</a>, Imagery © <a href="https://www.mapbox.com/">Mapbox</a>',
+    			maxZoom: 18,
+    			id: 'mapbox/streets-v11',
+    			accessToken: 'pk.eyJ1IjoidHR0dHoiLCJhIjoiY2s0MjRhN3RpMDg2NTNldGJwMW9ncnJvbSJ9.Y4HmE8tK73yvfuhsYrmyLw'
+			}).addTo(mymap);
+			var marker = L.marker([39.155822, -86.523685]).addTo(mymap);
+			marker.bindPopup("<b>I am here now</b>").openPopup();	
+			var marker = L.marker([43.857802, -234.657669]).addTo(mymap);
+			marker.bindPopup("<b>This is my home!</b>").openPopup();
+			var marker = L.marker([29.495904, -253.520079]).addTo(mymap);
+			marker.bindPopup("<b>I had been here</b>").openPopup();
+		</script>
+
+	</body>
+</html>
